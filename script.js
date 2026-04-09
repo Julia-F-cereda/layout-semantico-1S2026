@@ -17,6 +17,10 @@ colorPicker.addEventListener('input', (e) =>{
 });
 
 artcicleColorPicker.addEventListener('input', (e) =>{
+    const color = e.target.value;
+    newsArticle.forEach(article => {article.style.backgroundColor = color;
+    });
+    localStorage.setItem('articleColor', color);
 
 });
 
