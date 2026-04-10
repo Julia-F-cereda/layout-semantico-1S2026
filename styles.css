@@ -8,6 +8,14 @@
 body{
     background-color: pink;
 }
+:root{
+    --primary-color: #05006b;
+    --color: #000;
+    --bg-color: #ffffff;
+    --font-family: 'Roboto', sans-serif;
+
+
+}
 
 /* .page{
 
