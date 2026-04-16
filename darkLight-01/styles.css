@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root {
+  --primary-color-light: #f0f0f0; 
+  --secondary-color-light: #ffffff;
+  --text-color-light: #333;
+  --hover-color-light: #ddd; 
+  --button-bg-light: #e0e0e0;
+  --button-hover-light: #ccc;
+  --sidebar-bg-light: #ffffff; 
+
+  --primary-color-dark: #1e1e1e;
+  --secondary-color-dark: #2e2e2e;
+  --text-color-dark: #f0f0f0;
+  --hover-color-dark: #555;
+  --button-bg-dark: #333;
+  --button-hover-dark: #444;
+  --sidebar-bg-dark: #2e2e2e;
+}
+
+/* -------------------------------------light----------------------------------------------------------------------------------------------- */
+/* o body pega  conteudo inteiro */
+.geral{
+    display: flex;
+    background-color:var(--primary-color-light);
+    width: 100vw;
+    height: 100vh;
+    color: var(--text-color-light);
+}
+/* menu pega o menuzinho, a parte que ta de outra cor, que tem os botoes */
+.menu{
+    display: flex;
+    background-color: var(--sidebar-bg-light);
+    width: 10%;
+    height: 100%;
+}
+/* ---------------------------------------------dark-------------------------------------------------------------------------------------- */
+
+.geral.dark{
+    background-color: var(--primary-color-dark);
+    color: var(--text-color-dark);
+}
+
+.menu.dark{
+    background-color: var(--sidebar-bg-dark);
+}
+
+/* ----------------------------------------------light------------------------------------------------------------------------------------ */
+/* botoes são os que estao dentro do menu */
+.botoes{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* pegando o botao  */
+.botoes a {
+    outline: none;
+    text-decoration: none;
+    color: var(--text-color-light);
+}
+
+.botoes :hover{
+    background-color: var(--hover-color-light);
+}
+/* -------------------------------------------------dark----------------------------------------------------------------------------------- */
+.botoes.dark a{
+    color: var(--text-color-dark);
+}
+
+.botoes.dark :hover{
+    background-color: var(--hover-color-dark);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------ */
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------------------------------------------------light-------------------------------------------------------------------------------- */
+/* peganodo botao light */
+/* é o botao para aletrar o tema, esta dentro do main */
+.botao-tema{
+    background-color:var(--button-bg-light);
+}
+.botao-tema a {
+    outline: none;
+    text-decoration: none;
+    color: var(--text-color-light);
+}
+.botao-tema :hover{
+    background-color: var(--button-hover-light);
+}
+
+/* ----------------------------------------------------------dark------------------------------------------------------------------------ */
+/* quanod for mod dark */
+.botao-tema.dark{
+    background-color: var(--button-bg-dark);
+}
+.botao-tema.dark a{
+    color: var(--text-color-dark);
+}
+.botao-tema.dark :hover{
+    background-color: var(--button-hover-dark);
+}
