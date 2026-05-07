@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./test-c.js" defer></script>
     <style>
        
 
@@ -14,11 +13,70 @@
 <body>
     <h1>BUSCA DE CEP</h1>
     <div class="CEP">
-    <input type="text"></input>
-    <button id="busca" type="button">botao01</button>
-    <button id="busca2" type="button">botao02</button>
+    <input id="input" type="text"></input>
+    <button onclick="cep()" id="busca" type="button">Buscar com .then()</button>
+    <button onclick="await()" id="busca2" type="button">Buscar com async/await</button>
     </div>
     
-    
+    <script>
+        
+       
+        
+        function cep(){
+        const input = document.getElementById('input').value
+        const url = `https://viacep.com.br/ws/${input}/json/`;
+        
+        const consulta = fetch(url);
+        consulta
+
+        .then((resposta) => {
+            if(!resposta.ok){
+                throw new Error('Erro na Requisição.')
+            }
+            return resposta.json()
+        }) 
+
+        .then((dados) => {
+
+            if(dados.erro){
+                throw new Error('CEP inválido ou não encontrado.')
+            }
+            console.log(dados)
+        }) 
+
+        .catch((error) => {
+            console.warn(error)
+        }) 
+
+        };
+
+        // function await(){
+        //     const consulta = fetch(url);
+        // consulta
+
+        // .then((resposta) => {
+        //     if(!resposta.ok){
+        //         throw new Error('Erro na Requisição.')
+        //     }
+        //     return resposta.json()
+        // }) 
+
+        // .then((dados) => {
+
+        //     if(dados.erro){
+        //         throw new Error('CEP inválido ou não encontrado.')
+        //     }
+        //     console.log(dados)
+        // }) 
+
+        // .catch((error) => {
+        //     console.warn(error)
+        // }) 
+
+        // };
+
+        
+
+    </script>
 </body>
 </html>

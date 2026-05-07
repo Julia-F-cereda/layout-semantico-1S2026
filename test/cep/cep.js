@@ -2,8 +2,8 @@ const cep = document.getElementById('.busca');
 const url = 'https://viacep.com.br/ws/01001000/json/'
 
 
-cep.addEventListener('click') =>() {
-    const consulta = fetch(url);
+
+const consulta = fetch(url);
 consulta
 
     .then((resposta) => {
@@ -25,7 +25,7 @@ consulta
         console.warn(error)
     }) 
 
-}
+
 
 
 /* Criar uma requisição HTTP com fecth e async/await */
